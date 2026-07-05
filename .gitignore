@@ -1,0 +1,18 @@
+﻿# Build outputs
+build/
+bin/
+.gradle/
+
+# Node/VitePress
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+.vercel/
+.env.local
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
