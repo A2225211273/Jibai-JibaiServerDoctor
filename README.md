@@ -5,7 +5,7 @@
 > 作者：即白  
 > 邮箱：jibai0517@gamil.com  
 > 版本：1.0.0  
-> 在线 Wiki：[https://jibaioptimizer-wiki.vercel.app](https://jibaioptimizer-wiki.vercel.app)
+> 在线 Wiki：[https://jibai-server-doctor-wiki.vercel.app](https://jibai-server-doctor-wiki.vercel.app)
 
 ## 项目介绍
 
@@ -173,7 +173,7 @@ plugins/
 
 - 插件源码与说明：[plugins/JibaiServerDoctor](plugins/JibaiServerDoctor)
 - Wiki 文档：[plugins/JibaiServerDoctor/WIKI.md](plugins/JibaiServerDoctor/WIKI.md)
-- 在线 Wiki：[https://jibaioptimizer-wiki.vercel.app](https://jibaioptimizer-wiki.vercel.app)
+- 在线 Wiki：[https://jibai-server-doctor-wiki.vercel.app](https://jibai-server-doctor-wiki.vercel.app)
 
 ## 免责声明
 
