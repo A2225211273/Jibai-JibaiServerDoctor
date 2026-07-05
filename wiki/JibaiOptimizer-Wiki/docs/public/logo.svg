@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JibaiOptimizer">
-  <rect width="64" height="64" rx="10" fill="#111827"/>
-  <path d="M14 38h36v8H14z" fill="#16a34a"/>
-  <path d="M14 18h8v20h-8zM28 14h8v24h-8zM42 24h8v14h-8z" fill="#0d9488"/>
-  <path d="M18 50h28" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"/>
-</svg>
