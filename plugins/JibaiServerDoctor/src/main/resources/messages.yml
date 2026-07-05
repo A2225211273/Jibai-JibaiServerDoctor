@@ -1,0 +1,87 @@
+# =====================================================================
+#  JibaiServerDoctor 提示语文件
+#  作者：即白
+#  颜色写法：支持 <green> 这类颜色标签，也支持 &a 传统颜色码，二者可混用。
+#  占位符：形如 {score}、{percent}，运行时会被替换为实际数值。
+# =====================================================================
+
+prefix: "<green>[服务器医生]</green> "
+
+no-permission: "<red>你没有权限使用这个指令。</red>"
+only-player: "<red>这个指令只能由玩家执行。</red>"
+reload-success: "<green>配置已重载。</green>"
+unknown-command: "<red>未知指令，请使用 /doctor help 查看帮助。</red>"
+player-not-found: "<red>找不到玩家：{player}</red>"
+feature-disabled: "<gray>该功能已在配置中关闭。</gray>"
+
+help:
+  header: "<gold>===== JibaiServerDoctor 指令帮助 =====</gold>"
+  status: "<yellow>/doctor status <gray>- 查看服务器健康状态</gray></yellow>"
+  report: "<yellow>/doctor report <gray>- 生成 Markdown 体检报告</gray></yellow>"
+  export: "<yellow>/doctor export <gray>- 导出诊断包</gray></yellow>"
+  inspect-chunk: "<yellow>/doctor inspect chunk <gray>- 检查你当前所在的区块</gray></yellow>"
+  inspect-player: "<yellow>/doctor inspect player <玩家名> <gray>- 检查玩家附近区域</gray></yellow>"
+  risks: "<yellow>/doctor risks <gray>- 查看当前风险列表</gray></yellow>"
+  errors: "<yellow>/doctor errors <gray>- 查看最近日志错误摘要</gray></yellow>"
+  reload: "<yellow>/doctor reload <gray>- 重载配置文件</gray></yellow>"
+  footer: "<gold>=====================================</gold>"
+
+status:
+  header: "<gold>========== 服务器健康状态 ==========</gold>"
+  score: "<yellow>健康评分：<white>{score}</white> / 100  <white>[{level}]</white></yellow>"
+  players: "<yellow>在线玩家：<white>{players}</white>  世界数量：<white>{worlds}</white></yellow>"
+  memory: "<yellow>内存占用：<white>{used}MB / {max}MB ({percent}%)</white></yellow>"
+  entities: "<yellow>实体总数：<white>{entities}</white>  掉落物：<white>{items}</white>  经验球：<white>{orbs}</white></yellow>"
+  chunks: "<yellow>加载区块：<white>{chunks}</white></yellow>"
+  tick: "<yellow>近似 tick 延迟：<white>{tick}ms</white></yellow>"
+  risks: "<yellow>当前风险数量：<white>{risks}</white></yellow>"
+  footer: "<gold>====================================</gold>"
+
+report:
+  generated: "<green>体检报告已生成：<white>{file}</white></green>"
+  failed: "<red>体检报告生成失败，请查看控制台。</red>"
+
+export:
+  generated: "<green>诊断包已导出：<white>{folder}</white></green>"
+  failed: "<red>诊断包导出失败，请查看控制台。</red>"
+  hint: "<gray>可将该文件夹中的 ai-prompt.txt 内容复制给 AI 进行分析。</gray>"
+
+risk:
+  none: "<green>当前没有发现明显风险。</green>"
+  header: "<gold>当前风险列表（按严重程度排序）：</gold>"
+  item: "<yellow>{index}. </yellow>{color}{message}"
+  suggestion: "   <gray>建议：{suggestion}</gray>"
+
+errors:
+  none: "<green>最近日志中没有发现明显报错。</green>"
+  header: "<gold>最近错误摘要（最多显示 {limit} 条）：</gold>"
+  item: "<yellow>{index}. <white>{count}次</white> <gray>[{plugin}]</gray> {message}</yellow>"
+  summary: "<yellow>共发现 <white>{errors}</white> 条 ERROR/Exception，<white>{warns}</white> 条 WARN。</yellow>"
+
+inspect:
+  chunk-header: "<gold>区块检查：<white>{world} ({x}, {z})</white></gold>"
+  player-header: "<gold>玩家附近检查：<white>{player}</white>（半径 {radius} 格）</gold>"
+  entities: "<yellow>实体总数：<white>{entities}</white></yellow>"
+  items: "<yellow>掉落物：<white>{items}</white>  经验球：<white>{orbs}</white></yellow>"
+  monsters: "<yellow>怪物：<white>{monsters}</white>  动物：<white>{animals}</white></yellow>"
+  hoppers: "<yellow>附近漏斗：<white>{hoppers}</white></yellow>"
+  redstone: "<yellow>红石事件频率：<white>{redstone}</white> 次 / {window} 秒</yellow>"
+  chunks: "<yellow>附近活跃区块：<white>{chunks}</white></yellow>"
+  level: "<yellow>风险评级：{color}{level}</yellow>"
+
+alert:
+  health-low: "<red>[医生告警] 服务器健康评分较低：{score}/100，建议使用 /doctor report 生成报告。</red>"
+  memory-high: "<red>[医生告警] 服务器内存占用过高：{percent}%</red>"
+  redstone-high: "<red>[医生告警] 区块 {chunk} 红石事件过高：10 秒内 {count} 次</red>"
+  hopper-high: "<red>[医生告警] 区块 {chunk} 漏斗数量过高：{count} 个</red>"
+  entities-high: "<red>[医生告警] 世界 {world} 实体数量过高：{count} 个</red>"
+  errors-high: "<red>[医生告警] 插件 {plugin} 报错频繁：最近日志中出现 {count} 次</red>"
+
+startup:
+  banner-line: "<green>==============================</green>"
+  banner-name: "<aqua>JibaiServerDoctor 已启动</aqua>"
+  banner-author: "<yellow>作者: 即白</yellow>"
+  banner-email: "<gold>邮箱: jibai0517@gamil.com</gold>"
+  banner-version: "<gray>版本: {version}</gray>"
+  banner-status: "<green>状态: 插件已启动</green>"
+  shutdown: "<red>JibaiServerDoctor 已关闭。</red>"

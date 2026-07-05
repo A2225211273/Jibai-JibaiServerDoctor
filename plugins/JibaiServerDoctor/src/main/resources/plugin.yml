@@ -1,0 +1,54 @@
+name: JibaiServerDoctor
+version: '${version}'
+main: me.jibai.serverdoctor.JibaiServerDoctorPlugin
+api-version: '1.20'
+author: Jibai
+description: A cross-core server health report and diagnostics plugin. 全核心服务器体检与故障诊断插件。
+website: https://github.com/jibai
+
+commands:
+  doctor:
+    description: JibaiServerDoctor 主指令，服务器体检与诊断
+    usage: /doctor status|report|export|inspect|risks|errors|reload
+    aliases:
+      - jdoctor
+      - serverdoctor
+
+permissions:
+  jibai.doctor.admin:
+    description: JibaiServerDoctor 管理员总权限
+    default: op
+    children:
+      jibai.doctor.status: true
+      jibai.doctor.report: true
+      jibai.doctor.export: true
+      jibai.doctor.inspect: true
+      jibai.doctor.risks: true
+      jibai.doctor.errors: true
+      jibai.doctor.reload: true
+      jibai.doctor.notify: true
+
+  jibai.doctor.status:
+    description: 允许查看服务器健康状态
+    default: op
+  jibai.doctor.report:
+    description: 允许生成体检报告
+    default: op
+  jibai.doctor.export:
+    description: 允许导出诊断包
+    default: op
+  jibai.doctor.inspect:
+    description: 允许使用区块 / 玩家检查功能
+    default: op
+  jibai.doctor.risks:
+    description: 允许查看风险列表
+    default: op
+  jibai.doctor.errors:
+    description: 允许查看错误摘要
+    default: op
+  jibai.doctor.reload:
+    description: 允许重载配置
+    default: op
+  jibai.doctor.notify:
+    description: 允许接收风险告警提醒
+    default: op

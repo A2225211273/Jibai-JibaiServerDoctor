@@ -1,0 +1,104 @@
+# =====================================================================
+#  JibaiServerDoctor 配置文件
+#  作者：即白    邮箱：jibai0517@gamil.com
+#  说明：本插件只做诊断、报告和提醒，绝不删除数据、破坏方块、清理实体。
+# =====================================================================
+
+settings:
+  # 插件总开关。false 时不采集快照、不注册风险监控（指令仍可用但无数据）
+  enabled: true
+  # 语言标识，目前仅用于报告标注（内置中文）
+  language: zh_CN
+  # 是否在服务器启动完成后立即采集一次快照
+  collect-on-startup: true
+
+snapshot:
+  # 快照采集间隔（秒）。不建议低于 30 秒，避免频繁遍历实体带来开销
+  interval-seconds: 60
+  # 保留最近多少份历史快照，用于观察 tick / 内存变化趋势
+  keep-history: 60
+
+health-score:
+  # 是否启用健康评分
+  enabled: true
+  # 低于该分数视为“需要关注”
+  warning-score: 70
+  # 低于该分数视为“存在风险 / 严重异常”
+  danger-score: 50
+
+thresholds:
+  # 内存占用百分比
+  memory-warning-percent: 85
+  memory-danger-percent: 92
+  # 全服实体总数
+  total-entities-warning: 4000
+  total-entities-danger: 8000
+  # 全服掉落物总数
+  dropped-items-warning: 1000
+  dropped-items-danger: 2500
+  # 全服加载区块总数
+  loaded-chunks-warning: 6000
+  loaded-chunks-danger: 10000
+  # 近似 tick 延迟（毫秒）。单 tick 目标为 50ms，超过说明服务器在追赶
+  tick-delay-warning-ms: 70
+  tick-delay-danger-ms: 120
+
+redstone:
+  # 是否启用红石高频监控（只记录和提醒，不破坏方块）
+  enabled: true
+  # 统计时间窗口（秒）
+  window-seconds: 10
+  # 单区块在窗口内的红石事件数超过该值即记为风险
+  max-events-per-chunk: 300
+  # 触发时是否通知在线管理员
+  notify-admins: true
+
+hopper:
+  # 是否启用漏斗数量扫描（只记录和提醒，不破坏漏斗）
+  enabled: true
+  # 扫描间隔（秒），默认 300 秒，不要设得太低
+  scan-interval-seconds: 300
+  # 单区块漏斗数量超过该值即记为风险
+  max-hoppers-per-chunk: 64
+  # 触发时是否通知在线管理员
+  notify-admins: true
+
+log-analyzer:
+  # 是否启用日志错误分析
+  enabled: true
+  # 最多读取 logs/latest.log 的末尾多少行，避免读取超大日志卡顿
+  max-lines: 5000
+  # 用于匹配错误的关键字
+  keywords:
+    - ERROR
+    - WARN
+    - Exception
+    - Caused by
+
+reports:
+  # 报告输出目录（相对于插件数据目录）
+  directory: reports
+  # 报告是否包含插件报错统计
+  include-plugin-errors: true
+  # 报告是否包含风险处理建议
+  include-risk-suggestions: true
+
+exports:
+  # 诊断包输出目录（相对于插件数据目录）
+  directory: exports
+  # 是否生成给 AI 分析用的 ai-prompt.txt
+  include-ai-prompt: true
+  # 导出时是否过滤敏感信息（IP / Token / 密码等），强烈建议保持 true
+  filter-sensitive-data: true
+
+alerts:
+  # 是否启用管理员告警
+  enabled: true
+  # 同类告警的冷却时间（秒），避免刷屏
+  cooldown-seconds: 120
+  # 接收告警需要的权限节点
+  permission: jibai.doctor.notify
+
+logging:
+  # 是否在控制台输出关键日志
+  console: true
