@@ -5,7 +5,7 @@
 > 作者：即白  
 > 邮箱：jibai0517@gamil.com  
 > 版本：1.0.0  
-> 在线 Wiki：[https://jibai-server-doctor-wiki.vercel.app](https://jibai-server-doctor-wiki.vercel.app)
+> 在线 Wiki：[[https://jibai-server-doctor-wiki.vercel.app](https://jibai-server-doctor-wiki.vercel.app](http://www.jibai.shop/))
 
 ## 项目介绍
 
